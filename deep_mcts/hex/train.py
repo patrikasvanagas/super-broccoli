@@ -3,6 +3,8 @@ from pathlib import Path
 
 import sys
 sys.path.append('/kaggle/working/super-broccoli/deep_mcts')
+import os
+print(os.getcwd())
 from deep_mcts.hex.convolutionalnet import ConvolutionalHexNet
 from deep_mcts.hex.game import HexManager, HexState
 from deep_mcts.train import train, TrainingConfiguration
