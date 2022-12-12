@@ -4,6 +4,7 @@ import string
 import sys
 from typing import List
 
+
 from deep_mcts.gtp_interface import GTPInterface
 from deep_mcts.hex.convolutionalnet import ConvolutionalHexNet
 from deep_mcts.hex.game import Action, HexState
@@ -37,18 +38,20 @@ class HexGTPInterface(GTPInterface[HexState]):
 
     @staticmethod
     def get_game_net(board_size: int) -> ConvolutionalHexNet:
-        if board_size == int(sys.argv[1]):
-            path = sys.argv[2]
-            if path.endswith(".pth"):
-                return ConvolutionalHexNet.from_path(path, board_size)
-            else:
-                return ConvolutionalHexNet.from_path_full(path)
+        # if board_size == int(sys.argv[1]):
+        #     path = sys.argv[2]
+        #     if path.endswith(".pth"):
+        #         return ConvolutionalHexNet.from_path(path, board_size)
+        #     else:
+        #         return ConvolutionalHexNet.from_path_full(path)
+        return ConvolutionalHexNet(11)
         return ConvolutionalHexNet(board_size)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 3:
-        gtp_interface = HexGTPInterface(board_size=int(sys.argv[1]))
-    else:
-        gtp_interface = HexGTPInterface()
+    # if len(sys.argv) == 3:
+    #     gtp_interface = HexGTPInterface(board_size=int(sys.argv[1]))
+    # else:
+    #     gtp_interface = HexGTPInterface()
+    gtp_interface = HexGTPInterface()
     gtp_interface.start()
