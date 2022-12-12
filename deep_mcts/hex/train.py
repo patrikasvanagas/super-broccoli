@@ -1,6 +1,8 @@
 import datetime
 from pathlib import Path
 
+import sys
+sys.path.append('/kaggle/working/super-broccoli/deep_mcts')
 from deep_mcts.hex.convolutionalnet import ConvolutionalHexNet
 from deep_mcts.hex.game import HexManager, HexState
 from deep_mcts.train import train, TrainingConfiguration
@@ -20,14 +22,14 @@ if __name__ == "__main__":
         train(
             anet,
             TrainingConfiguration[HexState](
-                num_games=1000,
-                num_simulations=50,
-                save_interval=10000,
-                evaluation_interval=10000,
+                num_games=100,
+                num_simulations=5,
+                save_interval=1000,
+                evaluation_interval=1000,
                 save_dir=str(save_dir),
-                sample_move_cutoff=10,
+                sample_move_cutoff=1,
                 dirichlet_alpha=0.33,
-                replay_buffer_max_size=5000,
+                replay_buffer_max_size=500,
             ),
         )
         print("*" * 50)
