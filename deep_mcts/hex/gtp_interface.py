@@ -4,7 +4,8 @@ import string
 import sys
 from typing import List
 
-
+import sys
+sys.path.append('C:/Users/vanag/Desktop/deep_mcts')
 from deep_mcts.gtp_interface import GTPInterface
 from deep_mcts.hex.convolutionalnet import ConvolutionalHexNet
 from deep_mcts.hex.game import Action, HexState

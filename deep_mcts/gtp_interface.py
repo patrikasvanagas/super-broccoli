@@ -8,6 +8,9 @@ import numpy as np
 import pexpect
 import torch
 
+import sys
+sys.path.append('C:/Users/vanag/Desktop/deep_mcts')
+
 from deep_mcts.game import Player, State, GameManager, Action
 from deep_mcts.gamenet import GameNet
 from deep_mcts.mcts import MCTS, Node
@@ -40,7 +43,7 @@ class GTPInterface(ABC, Generic[_S]):
             "result": self.result,
         }
         self.board_size = board_size
-        self.net = self.get_game_net(board_size).to(torch.device("cuda:2"))
+        self.net = self.get_game_net(board_size).to(torch.device("cuda:0"))
         self.game_manager = self.net.manager
         self.mcts = MCTS(
             self.game_manager,
