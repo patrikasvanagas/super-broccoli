@@ -10,5 +10,5 @@ evaluate_complex_rollouts(
     Path(__file__).resolve().parent / "saves",
     ConvolutionalHexWithSwapNet,
     HexWithSwapManager(grid_size=6),
-    torch.device("cuda:1"),
+    torch.device("cuda:2"),
 )

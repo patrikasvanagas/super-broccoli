@@ -10,5 +10,5 @@ evaluate_training(
     Path(__file__).resolve().parent / "saves",
     ConvolutionalOthelloNet,
     OthelloManager(grid_size=6),
-    torch.device("cuda:1"),
+    torch.device("cuda:2"),
 )

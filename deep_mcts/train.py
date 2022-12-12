@@ -50,7 +50,7 @@ class TrainingConfiguration(Generic[_S]):
     nprocs: int = 25
     batch_size: int = 1024
     replay_buffer_max_size: int = 100_000
-    train_device: torch.device = torch.device("cuda:1")
+    train_device: torch.device = torch.device("cuda:2")
     self_play_device: torch.device = torch.device("cuda:0")
     evaluation_games: int = 20
     transfer_interval: int = 1000
