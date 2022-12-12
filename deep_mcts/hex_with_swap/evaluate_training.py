@@ -10,5 +10,5 @@ evaluate_training(
     Path(__file__).resolve().parent / "saves",
     ConvolutionalHexWithSwapNet,
     HexWithSwapManager(grid_size=6),
-    torch.device("cuda:0"),
+    torch.device("cuda"),
 )

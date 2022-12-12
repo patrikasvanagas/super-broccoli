@@ -10,5 +10,5 @@ from deep_mcts.hex_with_swap.convolutionalnet import ConvolutionalHexWithSwapNet
 save_dir = Path(__file__).resolve().parent / "saves"
 manager = HexWithSwapManager(grid_size=6)
 evaluate_simple_rollouts(
-    save_dir, ConvolutionalHexWithSwapNet, manager, torch.device("cuda:0")
+    save_dir, ConvolutionalHexWithSwapNet, manager, torch.device("cuda")
 )

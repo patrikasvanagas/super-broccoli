@@ -31,7 +31,7 @@ Additionally there are "complex_simulations" and "simple_simulations" keys, corr
 If using [Poetry](https://python-poetry.org/), run `poetry install`. If not, run `pip install -r requirements.txt`.
 
 ### Experiment 1
-If running on a machine with only one GPU, set both `train_device` and `self_play_device` in `TrainingConfiguration` in `deep_mcts/train.py` to `cuda:0`.
+If running on a machine with only one GPU, set both `train_device` and `self_play_device` in `TrainingConfiguration` in `deep_mcts/train.py` to `cuda`.
 
 1. `python -m deep_mcts.<game>.train`
 2. `python -m deep_mcts.<game>.evaluate_training`

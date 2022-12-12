@@ -43,7 +43,7 @@ class GTPInterface(ABC, Generic[_S]):
             "result": self.result,
         }
         self.board_size = board_size
-        self.net = self.get_game_net(board_size).to(torch.device("cuda:0"))
+        self.net = self.get_game_net(board_size).to(torch.device("cuda"))
         self.game_manager = self.net.manager
         self.mcts = MCTS(
             self.game_manager,

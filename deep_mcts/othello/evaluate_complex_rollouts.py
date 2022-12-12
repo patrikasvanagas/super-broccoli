@@ -10,5 +10,5 @@ evaluate_complex_rollouts(
     Path(__file__).resolve().parent / "saves",
     ConvolutionalOthelloNet,
     OthelloManager(grid_size=6),
-    torch.device("cuda:0"),
+    torch.device("cuda"),
 )
